@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Autopilot FF — your fantasy co-manager</title>
+<meta name="theme-color" content="#0b1020" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏈</text></svg>" />
+<link rel="manifest" href="./manifest.webmanifest" />
+<link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="Autopilot FF" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="stylesheet" href="./style.css" />
+<meta name="robots" content="noindex" />
+</head>
+<body>
+<div class="shell">
+  <aside class="side">
+    <div class="brand"><span class="logo">🏈</span><div><b>Autopilot FF</b><small>AI proposes · you approve</small></div></div>
+    <nav id="nav">
+      <a data-view="today" class="active"><span>⚡</span>Today</a>
+      <a data-view="roster"><span>👥</span>My Team</a>
+      <a data-view="league"><span>🏆</span>League</a>
+      <a data-view="news"><span>🩺</span>Injuries &amp; News</a>
+      <a data-view="record"><span>📊</span>Track record</a>
+      <a data-view="agent"><span>🤖</span>Agent Log</a>
+      <a data-view="why"><span>✨</span>Why switch</a>
+    </nav>
+    <div class="side-foot" id="sideFoot"></div>
+  </aside>
+  <main>
+    <header class="top">
+      <div>
+        <div class="eyebrow" id="eyebrow">Loading…</div>
+        <h1 id="title">Today</h1>
+      </div>
+      <div class="top-actions"><button class="btn toggle" id="demoMode" title="Pause scheduled agent runs"><span class="dot"></span><span class="lbl">Demo mode: off</span></button><button class="btn" id="resetBtn" title="Restore the demo league and clear all decisions">↺ Reset demo</button><button class="btn primary" id="runBtn"><span class="spin"></span><span class="lbl">Run agent now</span></button></div>
+    </header>
+    <div class="demo-banner" id="banner">🧪 <b>Demo league:</b> teams, managers, records &amp; matchups are mock data. Players, projections, injuries, trends, schedule &amp; weather are <b>real</b> (Sleeper, ESPN, Open-Meteo).</div>
+    <section id="view"></section>
+  </main>
+</div>
+<nav class="tabbar" id="tabbar">
+  <a data-view="today" class="active"><span>⚡</span>Today</a>
+  <a data-view="roster"><span>👥</span>Team</a>
+  <a data-view="league"><span>🏆</span>League</a>
+  <a data-view="news"><span>🩺</span>News</a>
+  <a data-view="record"><span>📊</span>Record</a>
+  <a data-view="agent"><span>🤖</span>Agent</a>
+  <a data-view="why"><span>✨</span>Why</a>
+</nav>
+<div id="toast"></div>
+<script src="./snapshot.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
